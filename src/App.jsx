@@ -6,12 +6,12 @@ function App() {
   const [init, setInit] = useState(false);
   return (
     <>
-      <div>
+      <div className="title">
         <h1>WhereCam</h1>
       </div>
-      <div>
+      <div className="acceuilPage">
         {init === false
-          ? <button type="button" onClick={() => setInit(true)}>PLAY</button>
+          ? <button className="buttonPlay" type="button" onClick={() => setInit(true)}>PLAY</button>
           : <Question />}
       </div>
     </>
