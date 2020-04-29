@@ -7,52 +7,101 @@ class Question extends React.Component {
     super();
     this.state = {
       countGood: 0,
-      count: 1,
-      fisrtQuestion: '',
-      secondQuestion: '',
-      thirdQuestion: '',
+      count: 0,
       affichageQuestion: '',
       firstResponse: 'A',
       secondResponse: 'B',
       thirdResponse: 'C',
+      questions: [],
+      answers: [],
     };
   }
 
+  componentDidMount() {
+    this.getCam();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { count } = this.state;
+    if (prevState.count !== count) {
+      this.getCam();
+    }
+  }
+
   getCam = () => {
-    const url = '';
+    const categories = ['beach', 'city'];
+    const category = categories[Math.floor(Math.random() * categories.length)];
+    const url = `https://api.windy.com/api/webcams/v2/list/category=${category}/limit=10?show=webcams:category,image,location,player&key=93eR13JT6BB1W8MkCSWGxeD1AtXmSlht`;
     Axios.get(url)
       .then((response) => response.data)
-      .then((data) => {});
+      .then((data) => {
+        const good = 1;
+        const false1 = 2;
+        const false2 = 3;
+
+        const locations = [
+          data.result.webcams[good].location.city,
+          data.result.webcams[false1].location.city,
+          data.result.webcams[false2].location.city,
+        ];
+        locations.sort(() => (-1 + Math.floor(Math.random() * 2) * 2));
+        this.setState({
+          affichageQuestion: data.result.webcams[good].player.day.embed,
+          firstResponse: locations[0],
+          secondResponse: locations[1],
+          thirdResponse: locations[2],
+          goodAnswer: data.result.webcams[good].location.city,
+          questions: data.result.webcams[good].location.city,
+        });
+      });
   }
 
   render() {
-    const url = '';
-    const { count, affichageQuestion, countGood } = this.state;
-    const { firstQuestion, secondQuestion, thirdQuestion } = this.state;
+    const {
+      count, countGood, affichageQuestion, questions, goodAnswer, answers,
+    } = this.state;
     const { firstResponse, secondResponse, thirdResponse } = this.state;
-    if (count === 1) { this.setState({ firstQuestion: url })};
-    if (count === 2) { this.setState({ secondQuestion: url })};
-    if (count === 3) { this.setState({ thirdQuestion: url })};
     return (
-      count < 4 ?
-      <div>
-        <div>
-          <iframe src={affichageQuestion} title="webcam" />
-          <h2>Choose a location :</h2>
-          <input type="radio" name="response" value="0" /><label htmlFor="1">{firstResponse}</label>
-          <input type="radio" name="response" value="0" /><label htmlFor="2">{secondResponse}</label>
-          <input type="radio" name="response" value="0" /><label htmlFor="3">{thirdResponse}</label>
-          <button type="button" onClick={() => this.setState({ count: count + 1 })}>Validate</button>
-        </div>
-        <p>{count}/3</p>
-      </div>
-      : (
-        <Result
-          firstQuestion={firstQuestion}
-          secondQuestion={secondQuestion}
-          thirdQuestion={thirdQuestion}
-      />
-    )
+      count < questions.length
+        ? (
+          <div>
+            <div>
+              <iframe src={affichageQuestion} title="webcam" />
+              <h2>Choose a location :</h2>
+              <form onSubmit={(event) => {
+                const response = new FormData(event.target).get('response');
+                let prevCountGood = countGood;
+                if (response === goodAnswer) {
+                  prevCountGood += 1;
+                }
+                this.setState({ count: count + 1, countGood: prevCountGood });
+                event.preventDefault();
+              }}
+              >
+                <input id="1" type="radio" name="response" value={firstResponse} />
+                <label htmlFor="1">{firstResponse}</label>
+                <input id="2" type="radio" name="response" value="1" />
+                <label htmlFor="2">{secondResponse}</label>
+                <input id="3" type="radio" name="response" value="2" />
+                <label htmlFor="3">{thirdResponse}</label>
+                <button type="submit">Validate</button>
+
+              </form>
+            </div>
+            <p>
+              {count + 1}
+              /
+              {questions.length}
+            </p>
+          </div>
+        )
+        : (
+          <Result
+            questions={questions}
+            countGood={countGood}
+            locates={answers}
+          />
+        )
     );
   }
 }
