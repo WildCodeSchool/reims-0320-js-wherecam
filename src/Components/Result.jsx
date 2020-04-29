@@ -2,26 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Result(props) {
-  const { questions, countGood } = props;
+  const { answers, countGood } = props;
+
   return (
     <div>
       <p>
         {`You had ${countGood} good answer !`}
       </p>
-      {questions.map((question) => (
-        <div>
-          <iframe src={question} title="local" />
-          <p>locale</p>
-        </div>
-      ))
-      }
+      {answers.map((answer) => (
+        <>
+          <iframe src={answer.affichageQuestion} title={answer.goodAnswer} />
+          <p>{answer.goodAnswer}</p>
+        </>
+      ))}
     </div>
   );
 }
 
 Result.propTypes = {
   countGood: PropTypes.isRequired,
-  questions: PropTypes.isRequired,
+  answers: PropTypes.isRequired,
 };
 
 export default Result;

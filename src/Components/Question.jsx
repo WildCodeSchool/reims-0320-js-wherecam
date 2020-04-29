@@ -12,7 +12,6 @@ class Question extends React.Component {
       firstResponse: 'A',
       secondResponse: 'B',
       thirdResponse: 'C',
-      questions: [],
       answers: [],
     };
   }
@@ -51,18 +50,17 @@ class Question extends React.Component {
           secondResponse: locations[1],
           thirdResponse: locations[2],
           goodAnswer: data.result.webcams[good].location.city,
-          questions: data.result.webcams[good].location.city,
         });
       });
   }
 
   render() {
     const {
-      count, countGood, affichageQuestion, questions, goodAnswer, answers,
+      count, countGood, affichageQuestion, goodAnswer, answers,
     } = this.state;
     const { firstResponse, secondResponse, thirdResponse } = this.state;
     return (
-      count < questions.length
+      count < 3
         ? (
           <div>
             <div>
@@ -74,15 +72,19 @@ class Question extends React.Component {
                 if (response === goodAnswer) {
                   prevCountGood += 1;
                 }
-                this.setState({ count: count + 1, countGood: prevCountGood });
+                this.setState({
+                  count: count + 1,
+                  countGood: prevCountGood,
+                  answers: [...answers, { goodAnswer, affichageQuestion }],
+                });
                 event.preventDefault();
               }}
               >
                 <input id="1" type="radio" name="response" value={firstResponse} />
                 <label htmlFor="1">{firstResponse}</label>
-                <input id="2" type="radio" name="response" value="1" />
+                <input id="2" type="radio" name="response" value={secondResponse} />
                 <label htmlFor="2">{secondResponse}</label>
-                <input id="3" type="radio" name="response" value="2" />
+                <input id="3" type="radio" name="response" value={thirdResponse} />
                 <label htmlFor="3">{thirdResponse}</label>
                 <button type="submit">Validate</button>
 
@@ -91,15 +93,14 @@ class Question extends React.Component {
             <p>
               {count + 1}
               /
-              {questions.length}
+              3
             </p>
           </div>
         )
         : (
           <Result
-            questions={questions}
+            answers={answers}
             countGood={countGood}
-            locates={answers}
           />
         )
     );
