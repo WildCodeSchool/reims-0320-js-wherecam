@@ -6,7 +6,7 @@ function Result(props) {
   return (
     <div className="resultPage">
       <p>
-        {`You had ${countGood} good answer !`}
+        {`Youre score is : ${countGood} !`}
       </p>
       {answers.map((answer) => (
         <>
