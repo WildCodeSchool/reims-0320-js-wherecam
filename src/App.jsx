@@ -1,11 +1,15 @@
-import React from 'react';
-import Question from ./Components/Question
+import React, { useState } from 'react';
+import Question from './Components/Question'
 import './App.css';
 
 function App() {
+  const [init, setInit] = useState(false);
   return (
     <div>
-      <Question />
+      {init === false
+        ? <button type="button" onClick={() => setInit(true)}>PLAY</button>
+        : <Question />
+      }
     </div>
   );
 }
