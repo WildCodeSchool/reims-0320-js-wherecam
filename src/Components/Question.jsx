@@ -67,7 +67,7 @@ class Question extends React.Component {
       count < 3
         ? (
           <div className="questionPage">
-            <div>
+            <div className="questionBlock">
               {
               loading
                 ? (<LoadingSpinner />)
