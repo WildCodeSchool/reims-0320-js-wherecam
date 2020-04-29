@@ -3,16 +3,15 @@ import PropTypes from 'prop-types';
 
 function Result(props) {
   const { answers, countGood } = props;
-
   return (
-    <div>
+    <div className="resultPage">
       <p>
         {`You had ${countGood} good answer !`}
       </p>
       {answers.map((answer) => (
         <>
-          <iframe src={answer.affichageQuestion} title={answer.goodAnswer} />
-          <p>{answer.goodAnswer}</p>
+          <iframe className="responseWebcam" src={answer.affichageQuestion} title={answer.goodAnswer} />
+          <p className="resultAnswer" >{answer.goodAnswer}</p>
         </>
       ))}
     </div>

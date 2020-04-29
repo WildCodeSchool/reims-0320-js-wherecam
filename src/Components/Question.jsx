@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import Result from './Result';
+import LoadingSpinner from './LoadingSpinner';
 
 class Question extends React.Component {
   constructor() {
@@ -13,6 +14,7 @@ class Question extends React.Component {
       secondResponse: 'B',
       thirdResponse: 'C',
       answers: [],
+      loading: false,
     };
   }
 
@@ -28,7 +30,8 @@ class Question extends React.Component {
   }
 
   getCam = () => {
-    const categories = ['beach', 'city'];
+    const categories = ['beach', 'city', 'building', 'traffic', 'harbor', 'bay', 'airport', 'coast', 'island', 'golf'];
+    this.setState({ loading: true });
     const category = categories[Math.floor(Math.random() * categories.length)];
     const url = `https://api.windy.com/api/webcams/v2/list/category=${category}/limit=10?show=webcams:category,image,location,player&key=93eR13JT6BB1W8MkCSWGxeD1AtXmSlht`;
     Axios.get(url)
@@ -50,47 +53,54 @@ class Question extends React.Component {
           secondResponse: locations[1],
           thirdResponse: locations[2],
           goodAnswer: data.result.webcams[good].location.city,
+          loading: false,
         });
       });
   }
 
   render() {
     const {
-      count, countGood, affichageQuestion, goodAnswer, answers,
+      count, countGood, affichageQuestion, goodAnswer, answers, loading,
     } = this.state;
     const { firstResponse, secondResponse, thirdResponse } = this.state;
     return (
       count < 3
         ? (
-          <div>
+          <div className="questionPage">
             <div>
-              <iframe src={affichageQuestion} title="webcam" />
-              <h2>Choose a location :</h2>
-              <form onSubmit={(event) => {
-                const response = new FormData(event.target).get('response');
-                let prevCountGood = countGood;
-                if (response === goodAnswer) {
-                  prevCountGood += 1;
-                }
-                this.setState({
-                  count: count + 1,
-                  countGood: prevCountGood,
-                  answers: [...answers, { goodAnswer, affichageQuestion }],
-                });
-                event.preventDefault();
-              }}
+              {
+              loading
+                ? (<LoadingSpinner />)
+                : (<iframe className="questionWebcam" src={affichageQuestion} title="webcam" />)
+              }
+              <h2 className="questionTitle">Choose a location :</h2>
+              <form
+                className="responseForm"
+                onSubmit={(event) => {
+                  const response = new FormData(event.target).get('response');
+                  let prevCountGood = countGood;
+                  if (response === goodAnswer) {
+                    prevCountGood += 1;
+                  }
+                  this.setState({
+                    count: count + 1,
+                    countGood: prevCountGood,
+                    answers: [...answers, { goodAnswer, affichageQuestion }],
+                  });
+                  event.preventDefault();
+                }}
               >
-                <input id="1" type="radio" name="response" value={firstResponse} />
+                <input className="responseInput" id="1" type="radio" name="response" value={firstResponse} />
                 <label htmlFor="1">{firstResponse}</label>
-                <input id="2" type="radio" name="response" value={secondResponse} />
+                <input className="responseInput" id="2" type="radio" name="response" value={secondResponse} />
                 <label htmlFor="2">{secondResponse}</label>
-                <input id="3" type="radio" name="response" value={thirdResponse} />
+                <input className="responseInput" id="3" type="radio" name="response" value={thirdResponse} />
                 <label htmlFor="3">{thirdResponse}</label>
-                <button type="submit">Validate</button>
+                <button className="submitButton"type="submit">Validate</button>
 
               </form>
             </div>
-            <p>
+            <p className="questionCount">
               {count + 1}
               /
               3
