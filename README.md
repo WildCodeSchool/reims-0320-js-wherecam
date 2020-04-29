@@ -1,5 +1,4 @@
-Project WhereCam by Julien Nicaise
-
+Project WhereCam by Julien Nicaise, GILBERT Martin
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Project created by Fabrice ROGER,
