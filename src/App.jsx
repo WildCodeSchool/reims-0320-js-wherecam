@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Question from './Components/Question';
+import Help from './Components/Help'
 import './App.css';
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
         {init === false
           ? <button type="button" onClick={() => setInit(true)}>PLAY</button>
           : <Question />}
+      </div>
+      <div>
+        <Help />
       </div>
     </>
   );
