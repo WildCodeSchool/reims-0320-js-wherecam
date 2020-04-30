@@ -22,7 +22,6 @@ function App() {
         <Help />
       </div>
     </>
-
   );
 }
 
