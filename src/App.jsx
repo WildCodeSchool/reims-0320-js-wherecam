@@ -18,10 +18,9 @@ function App() {
             ? <button className="buttonPlay" type="button" onClick={() => setInit(true)}>PLAY</button>
             : <Question />}
         </div>
-
-      </div>
-      <div>
-        <Help />
+        <div>
+          <Help />
+        </div>
       </div>
     </>
   );

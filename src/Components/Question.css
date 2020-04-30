@@ -1,3 +1,6 @@
+.page{
+    background: linear-gradient(#2d847f, #b1caa7);
+}
 
 .title {
     display: flex;
@@ -11,9 +14,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(#2d847f, #b1caa7)
-    
 }
+
 .responseForm {
     display: flex;
     flex-direction: column;
@@ -21,9 +23,11 @@
     height: 400px;
     font-size: 3rem;
 }
+
 .questionWebcam {
     width: 100%;
 }
+
 .questionTitle {
     display: flex;
     justify-content: center;
