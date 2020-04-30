@@ -4,8 +4,8 @@ import './Help.css';
 function Help() {
   const [modal, setModal] = useState(false);
   return (
-    <>
-      <button type="button" onClick={() => setModal(true)}>Help</button>
+    <div>
+      <button className="buttonHelp" type="button" onClick={() => setModal(true)}>Help</button>
       {
         modal
           ? (
@@ -25,7 +25,7 @@ function Help() {
           )
           : null
       }
-    </>
+    </div>
   );
 }
 
