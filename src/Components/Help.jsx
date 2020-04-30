@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Help.css'
+import './Help.css';
 
 function Help() {
   const [modal, setModal] = useState(false);
