@@ -2,6 +2,8 @@ import React from 'react';
 import Axios from 'axios';
 import Result from './Result';
 import LoadingSpinner from './LoadingSpinner';
+import './Question.css';
+
 
 class Question extends React.Component {
   constructor() {
@@ -90,12 +92,20 @@ class Question extends React.Component {
                   event.preventDefault();
                 }}
               >
-                <input className="responseInput" id="1" type="radio" name="response" value={firstResponse} />
-                <label htmlFor="1">{firstResponse}</label>
-                <input className="responseInput" id="2" type="radio" name="response" value={secondResponse} />
-                <label htmlFor="2">{secondResponse}</label>
-                <input className="responseInput" id="3" type="radio" name="response" value={thirdResponse} />
-                <label htmlFor="3">{thirdResponse}</label>
+                <div className="responseBlock">
+                  <div className="responseCss">
+                    <input className="responseInput" id="1" type="radio" name="response" value={firstResponse} />
+                    <label htmlFor="1">{firstResponse}</label>
+                  </div>
+                  <div className="responseCss">
+                    <input className="responseInput" id="2" type="radio" name="response" value={secondResponse} />
+                    <label htmlFor="2">{secondResponse}</label>
+                  </div>
+                  <div className="responseCss">
+                    <input className="responseInput" id="3" type="radio" name="response" value={thirdResponse} />
+                    <label htmlFor="3">{thirdResponse}</label>
+                  </div>
+                </div>
                 <button className="submitButton"type="submit">Validate</button>
 
               </form>
