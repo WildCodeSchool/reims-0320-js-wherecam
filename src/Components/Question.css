@@ -56,6 +56,7 @@
     border-radius: 18px;
     color: #2d847f;
     box-shadow:10px 10px 5px black;
+
     padding: 0.5rem;
 }
 
@@ -99,7 +100,8 @@ input[type=radio]{
     padding: 15px;
     background-color: #f2dba6
 
-}
+
+
 
 input[type=radio]{
     height: 30px;
