@@ -132,8 +132,6 @@ input[type=radio]{
     color:#0d665f;
 }
 
-}
-
 input[type=radio]{
     height: 30px;
     width: 100px;
@@ -153,9 +151,32 @@ input[type=radio]{
 @media screen and (min-width: 815px){
     .questionWebcam {
         width: 60%;
-      
+        height: 45%;
     }   
     .responseWebcam {
         width: 60%;
+        height: 45%;
+    }
+
+    .responseBlock{
+        display: flex;
+        flex-grow: inherit;
+        margin-bottom: 2rem;
+    }
+
+    .responseCss label{
+        margin-right: 4rem;
+    }
+
+    .responseCss{
+        height: 4rem;
+    }
+
+    .questionCount{
+        margin: 0;
+    }
+
+    .resultAnswer{
+        font-size: 2rem;
     }
 }  
