@@ -126,6 +126,7 @@ class Question extends React.Component {
               countGood={countGood}
             />
             <button
+              className="buttonAgain"
               type="button"
               onClick={() => this.setState({
                 countGood: 0,

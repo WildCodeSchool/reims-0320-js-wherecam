@@ -11,7 +11,7 @@ function Result(props) {
       {answers.map((answer) => (
         <>
           <iframe className="responseWebcam" src={answer.affichageQuestion} title={answer.goodAnswer} />
-          <p className="resultAnswer" >{answer.goodAnswer}</p>
+          <p className="resultAnswer">{answer.goodAnswer}</p>
         </>
       ))}
     </div>
