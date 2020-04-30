@@ -1,59 +1,62 @@
 
-
-
-
-@media screen and (max-width: 375px) {
-    .title {
-        display: flex;
-        justify-content: center;
-        background-color: #0d665f;
-        margin: 0;
-        padding: 40px;
-        color: #0b1423;
-    }
-    .questionPage {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        background: linear-gradient(#2d847f, #b1caa7)
-        
-    }
-    .responseForm {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 400px;
-        font-size: 3rem;
-    }
-    .questionWebcam {
-        width: 100%;
-    }
-    .questionTitle {
-        display: flex;
-        justify-content: center;
-        font-size: 2.3rem;
-        color: #203749;
-        
-    }
-    .responseBlock {
-        height: 100px;
-        flex-grow: 1;
-    }
-    .responseInput {
-        margin-top: 50px;
-       
-    }
-    .questionCount {
-       
-    }
-    .submitButton {
-        background-color: #f2dba6;
-        border: none;
-        height: 60px;
-        width: 200px;
-        font-size: 25px;
-    }
+.title {
+    display: flex;
+    justify-content: center;
+    background-color: #0d665f;
+    margin: 0;
+    padding: 40px;
+    color: #0b1423;
+}
+.questionPage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(#2d847f, #b1caa7)
     
+}
+.responseForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    font-size: 3rem;
+}
+.questionWebcam {
+    width: 100%;
+}
+.questionTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 2.3rem;
+    color: #203749;
+    
+}
+.responseBlock {
+    height: 100px;
+    flex-grow: 1;
+}
+.responseInput {
+    margin-top: 50px;
+    
+}
+.questionCount {
+    
+}
+.submitButton {
+    background-color: #f2dba6;
+    border: none;
+    height: 60px;
+    width: 200px;
+    font-size: 25px;
+}
+
+.responseCss label{
+    background-color: #f2dba6;
+    border-radius: 18px;
+    color: #2d847f;
+    box-shadow:10px 10px 5px black;
+    
+
     .responseCss label{
         background-color: #f2dba6;
         border-radius: 18px;
@@ -82,5 +85,12 @@
         padding: 15px;
         background-color: #f2dba6
     }
+
 }
+
+input[type=radio]{
+    height: 30px;
+    width: 100px;
+}
+
 

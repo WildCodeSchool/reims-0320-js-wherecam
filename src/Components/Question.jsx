@@ -118,10 +118,26 @@ class Question extends React.Component {
           </div>
         )
         : (
-          <Result
-            answers={answers}
-            countGood={countGood}
-          />
+          <div>
+            <Result
+              answers={answers}
+              countGood={countGood}
+            />
+            <button
+              type="button"
+              onClick={() => this.setState({
+                countGood: 0,
+                count: 0,
+                affichageQuestion: '',
+                firstResponse: 'A',
+                secondResponse: 'B',
+                thirdResponse: 'C',
+                answers: [],
+              })}
+            >
+              Play Again
+            </button>
+          </div>
         )
     );
   }

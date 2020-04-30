@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Help.css'
+import './Help.css';
 
 function Help() {
   const [modal, setModal] = useState(false);
@@ -16,7 +16,7 @@ function Help() {
                 you will be able to see a landscape thanks to a camera as if you were there!
                 However to score points it will be necessary
                 to find by yourself the location among 3 answers.
-                Do not worry at the end you will get your scrore and can see
+                Don't worry at the end you will get your score and can see
                 the names of the places corresponding to what you have seen!
                 If you have understood everything:
               </p>
