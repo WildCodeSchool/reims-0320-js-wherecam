@@ -2,23 +2,28 @@ import React, { useState } from 'react';
 import Question from './Components/Question';
 import Help from './Components/Help'
 import './App.css';
+import './Components/Question.css';
 
 function App() {
   const [init, setInit] = useState(false);
   return (
-    <>
+    <div className="page">
       <div>
-        <h1>WhereCam</h1>
+        <h1 className="title">WhereCam</h1>
       </div>
-      <div>
+      <div className="accueilPage" >
         {init === false
-          ? <button type="button" onClick={() => setInit(true)}>PLAY</button>
+          ? <button className="buttonPlay" type="button" onClick={() => setInit(true)}>PLAY</button>
           : <Question />}
       </div>
+
+    </div>
+
       <div>
         <Help />
       </div>
     </>
+
   );
 }
 
