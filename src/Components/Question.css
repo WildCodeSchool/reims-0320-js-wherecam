@@ -55,7 +55,7 @@
     border-radius: 18px;
     color: #2d847f;
     box-shadow:10px 10px 5px black;
-    
+}
 
     .responseCss label{
         background-color: #f2dba6;
@@ -67,6 +67,7 @@
     input[type=radio]{
         height: 30px;
         width: 100px;
+        display: none;
     }
     .responseWebcam {
         width: 100%;
@@ -86,7 +87,7 @@
         background-color: #f2dba6
     }
 
-}
+
 
 input[type=radio]{
     height: 30px;
