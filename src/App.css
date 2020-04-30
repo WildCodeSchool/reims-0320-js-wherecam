@@ -1,9 +1,7 @@
-@media screen and (min-width: 815px){
-    
 .page {
     text-align: center;
     font-size: 5vh;
-    background-color: #2d847f;
+    background: linear-gradient(#2d847f, #b1caa7);
      
       
 }
@@ -14,8 +12,16 @@
 }
 
 
-.buttonPlay{   
-   font-size: 5vh;   
+
+@media screen and (min-width: 815px){
+    
+.title{
+    font-size: 3em;
+}
+
+
+.buttonPlay{  
+    font-size: 5vh;   
 }
 }
 
