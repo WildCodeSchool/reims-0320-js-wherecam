@@ -4,7 +4,6 @@ import Result from './Result';
 import LoadingSpinner from './LoadingSpinner';
 import './Question.css';
 
-
 class Question extends React.Component {
   constructor() {
     super();
@@ -77,6 +76,7 @@ class Question extends React.Component {
               }
               <h2 className="questionTitle">Choose a location :</h2>
               <form
+                id="formulaire"
                 className="responseForm"
                 onSubmit={(event) => {
                   const response = new FormData(event.target).get('response');
@@ -84,6 +84,9 @@ class Question extends React.Component {
                   if (response === goodAnswer) {
                     prevCountGood += 1;
                   }
+                  document.getElementById('rep1').checked = '';
+                  document.getElementById('rep2').checked = '';
+                  document.getElementById('rep3').checked = '';
                   this.setState({
                     count: count + 1,
                     countGood: prevCountGood,
@@ -94,20 +97,19 @@ class Question extends React.Component {
               >
                 <div className="responseBlock">
                   <div className="responseCss">
-                    <input className="responseInput" id="1" type="radio" name="response" value={firstResponse} />
-                    <label htmlFor="1">{firstResponse}</label>
+                    <input className="responseInput" id="rep1" type="radio" name="response" value={firstResponse} />
+                    <label htmlFor="rep1">{firstResponse}</label>
                   </div>
                   <div className="responseCss">
-                    <input className="responseInput" id="2" type="radio" name="response" value={secondResponse} />
-                    <label htmlFor="2">{secondResponse}</label>
+                    <input className="responseInput" id="rep2" type="radio" name="response" value={secondResponse} />
+                    <label htmlFor="rep2">{secondResponse}</label>
                   </div>
                   <div className="responseCss">
-                    <input className="responseInput" id="3" type="radio" name="response" value={thirdResponse} />
-                    <label htmlFor="3">{thirdResponse}</label>
+                    <input className="responseInput" id="rep3" type="radio" name="response" value={thirdResponse} />
+                    <label htmlFor="rep3">{thirdResponse}</label>
                   </div>
                 </div>
-                <button className="submitButton"type="submit">Validate</button>
-
+                <button className="submitButton" type="submit">Validate</button>
               </form>
             </div>
             <p className="questionCount">
