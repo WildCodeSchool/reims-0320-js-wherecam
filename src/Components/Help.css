@@ -1,0 +1,32 @@
+.modalBlock{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #F2DBA6;
+    background-color: #0B1423;
+    border: 3mm ridge #0B1423 ;
+    border-radius: 2%;
+    text-align: justify;
+    height: 80vh;
+    width: 70vw;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+}
+
+.modalText{
+    margin-bottom: 3rem;
+}
+
+.modalButton{
+    color: #f2dba6;
+    background-color: #203749;
+    border-color: #203749;
+    border-radius: 5px;
+    align-self: flex-end;
+    font-size: 2rem;
+}
