@@ -19,12 +19,10 @@ function App() {
             : <Question />}
         </div>
       </div>
-    </div>
       <div>
         <Help />
       </div>
     </>
-
   );
 }
 
