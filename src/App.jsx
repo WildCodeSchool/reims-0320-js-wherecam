@@ -12,14 +12,12 @@ function App() {
         <div>
           <h1 className="title">WhereCam</h1>
         </div>
-        <div className="accueilPage" >
-
+        <div className="accueilPage">
           {init === false
             ? <button className="buttonPlay" type="button" onClick={() => setInit(true)}>PLAY</button>
             : <Question />}
         </div>
       </div>
-    </div>
       <div>
         <Help />
       </div>
