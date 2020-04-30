@@ -56,6 +56,7 @@
     border-radius: 18px;
     color: #2d847f;
     box-shadow:10px 10px 5px black;
+<<<<<<< HEAD
     padding: 0.5rem;
 }
 
@@ -98,6 +99,25 @@ input[type=radio]{
     margin: 0;
     padding: 15px;
     background-color: #f2dba6
+=======
+
+    padding: 0.5rem;
+}
+
+.responseCss{
+    margin-bottom: 3rem;
+}
+
+.responseCss label{
+    background-color: #f2dba6;
+    border-radius: 18px;
+    color: #2d847f;
+    box-shadow:10px 10px 5px black;
+}
+
+input:checked + label{
+    background-color: #203749;
+>>>>>>> 1c5803a2deabd7d143ff6f837565562f1e6fe8ea
 }
 
 input[type=radio]{
@@ -126,6 +146,11 @@ input[type=radio]{
     background-color: #f2dba6
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
 input[type=radio]{
     height: 30px;
     width: 100px;
