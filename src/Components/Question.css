@@ -99,7 +99,7 @@ input[type=radio]{
     margin: 0;
     padding: 15px;
     background-color: #f2dba6
-
+}
 
 
 
@@ -108,4 +108,8 @@ input[type=radio]{
     width: 100px;
 }
 
-
+@media screen and (min-width: 815px){
+    .questionWebcam {
+        width: auto;
+    }
+}  
