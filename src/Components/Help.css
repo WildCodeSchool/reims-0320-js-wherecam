@@ -30,3 +30,15 @@
     align-self: flex-end;
     font-size: 2rem;
 }
+
+@media screen and (min-width: 815px){
+    
+    .modalText{
+        font-size: 3rem;
+    }
+
+    .modalButton{
+        font-size: 4rem;
+    }
+    
+}
