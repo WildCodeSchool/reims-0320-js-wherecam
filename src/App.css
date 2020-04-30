@@ -1,3 +1,21 @@
+.title {
+    text-align: center;
+    font-size: 5vh;
+    background-color: #2d847f;
+     
+      
+}
+.acceuilPage {
+    text-align: center;
+    font-size: 5vh;
+    background-color: #2d847f;
+}
+
+
+.buttonPlay{   
+   font-size: 5vh;   
+}
+
 @media screen and (max-width: 375px) {
     .page {
         min-height: 100vh;
@@ -5,4 +23,5 @@
 
 
 }
+
 
