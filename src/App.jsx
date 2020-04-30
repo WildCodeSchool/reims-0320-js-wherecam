@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Question from './Components/Question';
-import Help from './Components/Help'
+import Help from './Components/Help';
 import './App.css';
 
 function App() {

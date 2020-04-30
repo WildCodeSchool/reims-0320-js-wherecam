@@ -14,7 +14,7 @@ class LoadingSpinner extends React.Component {
       loading: true,
     };
   }
- 
+
   render() {
     const { loading } = this.state;
     return (
