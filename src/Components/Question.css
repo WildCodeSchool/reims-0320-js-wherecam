@@ -111,6 +111,10 @@ input[type=radio]{
 
 @media screen and (min-width: 815px){
     .questionWebcam {
-        width: auto;
+        width: 60%;
+      
+    }   
+    .responseWebcam {
+        width: 60%;
     }
 }  
